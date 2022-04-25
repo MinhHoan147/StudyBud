@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div>
+    <h3>Form create new room</h3>
+    <br>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+       <input type="submit" value="Submit">
+       <a href="{{request.META.HTTP_REFERER}}">Go back</a>
+</div>
+
+
+{% endblock %}
