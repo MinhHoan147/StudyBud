@@ -34,3 +34,9 @@ def getTopics(request):
     topics = Topic.objects.all()
     serializer = TopicSerializer(topics,many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def getTopic(request,pk):
+    topic = Topic.objects.get(id=pk)
+    serializer = TopicSerializer(topic,many=False)
+    return Response(serializer.data)
